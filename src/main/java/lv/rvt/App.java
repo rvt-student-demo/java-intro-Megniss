@@ -1,26 +1,28 @@
 package lv.rvt;
-
-public class App 
-{
 import java.util.Scanner;
-
-public class Main {
+public class App
+{
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Give the first number: ");
-        int num1 = scanner.nextInt();
-        System.out.print("Give the second number: ");
-        int num2 = scanner.nextInt();
-        System.out.println(num1 + " + " + num2 + " = " + (num1 + num2));
-        System.out.println(num1 + " - " + num2 + " = " + (num1 - num2));
-        System.out.println(num1 + " * " + num2 + " = " + (num1 * num2));
-        if (num2 != 0) {
-            System.out.println(num1 + " / " + num2 + " = " + ((double) num1 / num2));
-        } else {
-            System.out.println("Division by zero is not allowed.");
-        }
-        scanner.close();
-    }
-}
+        
+    
+            Scanner scanner = new Scanner(System.in);
+            int result = 0;
+            int summa = 0;
+            while (true) {
+                    System.out.println("Give a number");
+                    int number = Integer.valueOf(scanner.nextLine());
+                    if(number == 0) {
+                        break;
+                    }
 
+                    if(number > 0) {
+                        result = result + 1;
+                        summa = summa + number;
+                        continue;
+                    }
+            }
+
+                System.out.println("Number of numbers: " + result);
+                System.out.println("Number of numbers: " + summa);
+    }
 }
