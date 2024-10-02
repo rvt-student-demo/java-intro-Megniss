@@ -23,8 +23,11 @@ public class App
                 count++;
             }
             
+            double average = (double) sum / count;
+            
             System.out.println("Sum: " + sum);
             System.out.println("Numbers: " + count);
+            System.out.println("Average: " + average);
         }
     }
     
