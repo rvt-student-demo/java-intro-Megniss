@@ -3,26 +3,29 @@ import java.util.Scanner;
 public class App
 {
 
-public class Main {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        int sum = 0;
-        
-        System.out.println("Give numbers:");
-        
-        while (true) {
-            int number = scanner.nextInt();
+    public class Main {
+        public static void main(String[] args) {
+            Scanner scanner = new Scanner(System.in);
+            int sum = 0;
+            int count = 0;
             
-            if (number == -1) {
-                System.out.println("Thx! Bye!");
-                break;
+            System.out.println("Give numbers:");
+            
+            while (true) {
+                int number = scanner.nextInt();
+                
+                if (number == -1) {
+                    System.out.println("Thx! Bye!");
+                    break;
+                }
+                
+                sum += number;
+                count++;
             }
             
-            sum += number;
+            System.out.println("Sum: " + sum);
+            System.out.println("Numbers: " + count);
         }
-        
-        System.out.println("Sum: " + sum);
     }
-}
-
+    
 }
