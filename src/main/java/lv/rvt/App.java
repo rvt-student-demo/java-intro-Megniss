@@ -3,23 +3,18 @@ import java.util.Scanner;
 public class App
 {
     public class Main {
-        public static void main(String[] args) {
-            Scanner scanner = new Scanner(System.in);
-
-            System.out.println("How many times?");
-            int times = scanner.nextInt();
-
-            int count = 0;
-
-            while (count < times) {
-                printText();
-                count++;
+        public static void divisibleByThreeInRange(int beginning, int end) {
+            for (int i = beginning; i <= end; i++) {
+                if (i % 3 == 0) {
+                    System.out.println(i);
+                }
             }
-            scanner.close();
         }
-
-        public static void printText() {
-            System.out.println("In a hole in the ground there lived a method");
+    
+        public static void main(String[] args) {
+            divisibleByThreeInRange(3, 6);
+            divisibleByThreeInRange(2, 10);
         }
     }
+    
 }
