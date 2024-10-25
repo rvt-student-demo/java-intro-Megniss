@@ -1,6 +1,7 @@
 package lv.rvt;
-public class Stars {
-public static void printStars(int number) {
+public class Stars 
+{
+    public static void printStars(int number) {
     for(int i = 0; i < number; i++){
         System.out.println("*");
       }
@@ -19,6 +20,16 @@ public static void printStars(int number) {
     public static void printTriangle(int size){
     for(int i = 1; i <=size; i++){
         printStars(i);
+        }
+    }
+    public static void printSpaces(int n) {
+        for (int i = 0; i < n; i++) {
+            System.out.print(" ");
+        }
+    }
+    public static void printSTars(int n) {
+        for (int i = 0; i < n; i++) {
+            System.out.print("");
         }
     }
 }
