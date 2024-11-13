@@ -34,8 +34,6 @@ public class App
             return (double) this.sum / this.count;
         }
     }
-    
-    public class MainProgram {
         public static void main(String[] args) {
             Scanner scanner = new Scanner(System.in);
             Statistics allNumbers = new Statistics();
@@ -61,6 +59,5 @@ public class App
             System.out.println("Sum of even numbers: " + evenNumbers.getSum());
             System.out.println("Sum of odd numbers: " + oddNumbers.getSum());
         }
-    }
     
 }
