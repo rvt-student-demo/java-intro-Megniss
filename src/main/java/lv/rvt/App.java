@@ -4,60 +4,67 @@ import java.util.ArrayList;
 
 public class App
 {
-
-    public class Statistics {
-        private int count;
-        private int sum;
-    
-        public Statistics() {
-            this.count = 0;
-            this.sum = 0;
-        }
-    
-        public void addNumber(int number) {
-            this.count++;
-            this.sum += number;
-        }
-    
-        public int getCount() {
-            return this.count;
-        }
-    
-        public int getSum() {
-            return this.sum;
-        }
-    
-        public double average() {
-            if (this.count == 0) {
-                return 0;
-            }
-            return (double) this.sum / this.count;
-        }
-    }
         public static void main(String[] args) {
-            Scanner scanner = new Scanner(System.in);
-            Statistics allNumbers = new Statistics();
-            Statistics evenNumbers = new Statistics();
-            Statistics oddNumbers = new Statistics();
+                PaymentCard card = new PaymentCard(50);
+            System.out.println(card);
+        
+                PaymentCard card2 = new PaymentCard(50);
+            System.out.println(card2);
     
-            System.out.println("Enter numbers:");
-            while (true) {
-                int number = Integer.parseInt(scanner.nextLine());
-                if (number == -1) {
-                    break;
-                }
-                allNumbers.addNumber(number);
-                if (number % 2 == 0) {
-                    evenNumbers.addNumber(number);
-                } else {
-                    oddNumbers.addNumber(number);
-                }
-            }
-            System.out.println("Count: " + allNumbers.getCount());
-            System.out.println("Sum: " + allNumbers.getSum());
-            System.out.println("Average: " + allNumbers.average());
-            System.out.println("Sum of even numbers: " + evenNumbers.getSum());
-            System.out.println("Sum of odd numbers: " + oddNumbers.getSum());
+            card2.eatAffordably();
+            System.out.println(card2);
+    
+            card2.eatHeartily();
+            card2.eatAffordably();
+            System.out.println(card2);
+            
+                PaymentCard card3 = new PaymentCard(5);
+            System.out.println(card3);
+    
+            card3.eatHeartily();
+            System.out.println(card3);
+    
+            card3.eatHeartily();
+            System.out.println(card3);
+            
+                PaymentCard card4 = new PaymentCard(10);
+            System.out.println(card);
+    
+            card4.addMoney(15);
+            System.out.println(card4);
+    
+            card4.addMoney(10);
+            System.out.println(card4);
+    
+            card4.addMoney(200);
+            System.out.println(card4);
+        
+            PaymentCard card5 = new PaymentCard(10);
+            System.out.println("Paul: " + card5);
+            card5.addMoney(-15);
+            System.out.println("Paul: " + card5);
+
+            PaymentCard paulsCard = new PaymentCard(20);
+            PaymentCard mattsCard = new PaymentCard(30);
+    
+            paulsCard.eatHeartily();
+            mattsCard.eatAffordably();
+
+            System.out.println("Paul " +paulsCard);
+            System.out.println("Matt " +mattsCard);
+
+            paulsCard.addMoney(20);
+            mattsCard.eatHeartily();
+
+            System.out.println("Paul " +paulsCard);
+            System.out.println("Matt " +mattsCard);
+
+            paulsCard.eatAffordably();
+            mattsCard.eatAffordably();
+
+            mattsCard.addMoney(50);
+
+            System.out.println("Paul " +paulsCard);
+            System.out.println("Matt " +mattsCard);
         }
-    
 }
