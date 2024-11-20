@@ -4,67 +4,37 @@ import java.util.ArrayList;
 
 public class App
 {
-        public static void main(String[] args) {
-                PaymentCard card = new PaymentCard(50);
-            System.out.println(card);
-        
-                PaymentCard card2 = new PaymentCard(50);
-            System.out.println(card2);
-    
-            card2.eatAffordably();
-            System.out.println(card2);
-    
-            card2.eatHeartily();
-            card2.eatAffordably();
-            System.out.println(card2);
-            
-                PaymentCard card3 = new PaymentCard(5);
-            System.out.println(card3);
-    
-            card3.eatHeartily();
-            System.out.println(card3);
-    
-            card3.eatHeartily();
-            System.out.println(card3);
-            
-                PaymentCard card4 = new PaymentCard(10);
-            System.out.println(card);
-    
-            card4.addMoney(15);
-            System.out.println(card4);
-    
-            card4.addMoney(10);
-            System.out.println(card4);
-    
-            card4.addMoney(200);
-            System.out.println(card4);
-        
-            PaymentCard card5 = new PaymentCard(10);
-            System.out.println("Paul: " + card5);
-            card5.addMoney(-15);
-            System.out.println("Paul: " + card5);
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        ArrayList<Book> books = new ArrayList<>();
 
-            PaymentCard paulsCard = new PaymentCard(20);
-            PaymentCard mattsCard = new PaymentCard(30);
-    
-            paulsCard.eatHeartily();
-            mattsCard.eatAffordably();
+        while (true) {
+            System.out.print("Title: ");
+            String title = scanner.nextLine();
+            if (title.isEmpty()) {
+                break;
+            }
 
-            System.out.println("Paul " +paulsCard);
-            System.out.println("Matt " +mattsCard);
+            System.out.print("Pages: ");
+            int pages = Integer.parseInt(scanner.nextLine());
 
-            paulsCard.addMoney(20);
-            mattsCard.eatHeartily();
+            System.out.print("Publication year: ");
+            int publicationYear = Integer.parseInt(scanner.nextLine());
 
-            System.out.println("Paul " +paulsCard);
-            System.out.println("Matt " +mattsCard);
-
-            paulsCard.eatAffordably();
-            mattsCard.eatAffordably();
-
-            mattsCard.addMoney(50);
-
-            System.out.println("Paul " +paulsCard);
-            System.out.println("Matt " +mattsCard);
+            books.add(new Book(title, pages, publicationYear));
         }
+
+        System.out.print("What information will be printed? ");
+        String choice = scanner.nextLine();
+
+        if (choice.equals("everything")) {
+            for (Book book : books) {
+                System.out.println(book);
+            }
+        } else if (choice.equals("name")) {
+            for (Book book : books) {
+                System.out.println(book.getTitle());
+            }
+        }
+    }
 }
