@@ -3,11 +3,20 @@ import java.util.Scanner;
 import java.util.ArrayList;
 
 public class App
-{    public static void main(String[] args) {
-    Person paul = new Person("Paul", 24);
-    Person ada = new Person("Ada");
+{
+    public static void main(String[] args) {
+        Timer timer = new Timer();
 
-    System.out.println(paul);
-    System.out.println(ada);
-}
+        while (true) {
+            System.out.println(timer);
+            timer.advance();
+
+            try {
+                Thread.sleep(10);
+            } catch (InterruptedException e) {
+                System.out.println("Timer interrupted!");
+                break;
+            }
+        }
+    }
 }
