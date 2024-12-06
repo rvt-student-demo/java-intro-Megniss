@@ -2,24 +2,19 @@ package lv.rvt;
 
 public class Person {
     private String name;
-    private int age;
-    private double weight;
-    private double height;
+    private int weight;
+    public Person(String name, int weight) {
+        this.name = name;
+        this.weight = weight;
+    }
+    public String getName() {
+        return this.name;
+    }
 
-    public Person(String name) {
-        this.name = name;
-        this.age = 0;
-        this.weight = 0.0;
-        this.height = 0.0;
+    public int getWeight() {
+        return this.weight;
     }
-    public Person(String name, int age) {
-        this.name = name;
-        this.age = age;
-        this.weight = 0.0;
-        this.height = 0.0;
-    }
-    @Override
-    public String toString() {
-        return name + " is " + age + " years old.";
+    public void setWeight(int weight) {
+        this.weight = weight;
     }
 }

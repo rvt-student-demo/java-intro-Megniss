@@ -5,18 +5,19 @@ import java.util.ArrayList;
 public class App
 {
     public static void main(String[] args) {
-        Timer timer = new Timer();
+        HealthStation station = new HealthStation();
 
-        while (true) {
-            System.out.println(timer);
-            timer.advance();
+        Person john = new Person("John", 70);
+        Person emma = new Person("Emma", 65);
 
-            try {
-                Thread.sleep(10);
-            } catch (InterruptedException e) {
-                System.out.println("Timer interrupted!");
-                break;
-            }
-        }
+        System.out.println(john.getName() + "'s weight: " + station.weigh(john));
+        System.out.println(emma.getName() + "'s weight: " + station.weigh(emma));
+
+        station.feed(john);
+        station.feed(john);
+
+        System.out.println(john.getName() + "'s weight after feeding: " + station.weigh(john));
+
+        System.out.println("Total weighings performed: " + station.weighings());
     }
 }
