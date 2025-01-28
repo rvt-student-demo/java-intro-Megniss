@@ -1,20 +1,28 @@
 package lv.rvt;
 
 public class Person {
-    private String name;
-    private int weight;
-    public Person(String name, int weight) {
-        this.name = name;
-        this.weight = weight;
-    }
-    public String getName() {
-        return this.name;
-    }
-
-    public int getWeight() {
-        return this.weight;
-    }
-    public void setWeight(int weight) {
-        this.weight = weight;
-    }
+        private String name;
+        private String address;
+    
+        public Person(String name, String address) {
+            this.name = name;
+            this.address = address;
+        }
+    
+        public String getName() {
+            return name;
+        }
+    
+        public String getAddress() {
+            return address;
+        }
+    
+        public void setAddress(String address) {
+            this.address = address;
+        }
+    
+        @Override
+        public String toString() {
+            return name + " (" + address + ")";
+        }
 }
